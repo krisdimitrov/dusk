@@ -1,0 +1,20 @@
+[package]
+name = "dusk"
+version = "0.1.0"
+edition = "2024"
+description = "See which folders eat your disk, with colored bars in the terminal"
+license = "MIT"
+repository = "https://github.com/krisdimitrov/dusk"
+readme = "README.md"
+keywords = ["disk", "du", "cli", "filesystem"]
+categories = ["command-line-utilities", "filesystem"]
+
+[dependencies]
+anyhow = "1.0.104"
+clap = { version = "4.6.7", features = ["derive"] }
+owo-colors = { version = "4.4.0", features = ["supports-colors"] }
+
+# The profile that 'dist' will build with
+[profile.dist]
+inherits = "release"
+lto = "thin"
